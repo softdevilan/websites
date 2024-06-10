@@ -1,0 +1,217 @@
+/* configuraciones generales */
+
+a{text-decoration: none;}
+ 
+body{margin: 0; font-family: Arial, Helvetica, sans-serif;}
+
+.header, .main, .footer{min-width: fit-content; /* <-- no toques esto */ padding: 5vw;}
+ 
+/******************************************************************* header *************************************************************************/
+
+.header {background-color: black; /* texto: */ color: white; text-wrap: nowrap;}
+
+
+/* NAVBAR */
+
+.navbar a, a:visited{color: white;}
+.navbar {display: grid; grid-template-columns: repeat(3, 1fr); max-width: 100%; font-size: 2.5vw;}
+.navbar .nav-item { /* afecta a todos los items: container del logo, container de los elementos del medio y boton de contacto */
+    align-content: center; /* verticalmente */
+    max-width: 100%;
+    display: grid;
+}
+
+/* ITEM 1: contenedor del logo (imagen) */
+.navbar .nav-logo{justify-content: start;}
+.navbar .nav-logo img {max-width: 100%;max-height: 100%;}
+.navbar .nav-logo a:hover img{
+    transform: scale(1.05); transition: transform 0.3s ease;filter: drop-shadow(0.25vw 0.15vw 0vw blue) drop-shadow(-0.15vw -0.15vw 00.1px blueviolet);
+}
+
+/* ITEM 2: contenedor de los elementos centrales, define en num de columas */
+.navbar .center-nav-container {grid-template-columns: repeat(4, 1fr);}
+.navbar .center-nav-item,.icon-navbar img {max-width: 100%;}
+.navbar .center-nav-container .center-nav-item {display:grid;} .icon-navbar{display:none;}
+.navbar .center-nav-item a {border-right: 0.1vw solid rgb(255, 255, 255);text-align: center;}
+.navbar .center-nav-item:last-child a {border-right: none;}
+.navbar .center-nav-item a .text-navbar{padding: 0 1.25vw; border: 1vw solid transparent;}
+.navbar .center-nav-item a:hover .text-navbar{box-shadow: 1vw 1vw blueviolet; color:yellow;}
+.navbar .home a .text-navbar{color:blueviolet;} /* home */
+.navbar .home a:hover .text-navbar, .cd {color:white;}
+.navbar .home a:hover .text-navbar .cd{color:lime;}
+
+/* ITEM 3: contenedor del botón de contacto */
+.navbar .nav-contact-button {align-content: center; justify-content: flex-end; text-wrap: nowrap;}
+.navbar .nav-contact-button button {
+    font-size: 2.5vw;
+    color: white;
+    background-color: blueviolet;
+    border: solid transparent 0.75vw;
+    border-left-color: white;
+    border-top-color: white;
+    padding: 1vh 1.5vw;   
+}
+.navbar .nav-contact-button a:hover button{
+    cursor: pointer;
+    background-color: transparent;
+    border-color: yellow;
+    box-shadow: 0.75vw 0.75vw blueviolet;
+}
+
+/* ESPACIO LIBRE */
+
+.freedom-section {display: grid; justify-items: center; /* horizontal */ align-items: center; /* vertical */ height: 22.5vw; margin: 5vw;}
+.freedom-section .freedom-grid{display: grid; grid-template-columns: repeat(1, 2fr);row-gap: 1.5vw;}
+.freedom-section h1{font-size: 8vw; font-weight: 500; margin: 0 auto;}
+.freedom-section .bottom-freedom{display: grid; grid-template-columns: repeat(1, 2fr);}
+.freedom-section h2{color: blueviolet;font-size: 2.25vw}
+.freedom-section .bottom-freedom .arrow-container{
+    height: 15vw; 
+    display: flex;
+    justify-content: end;
+    align-items: flex-start;
+    padding-right: 15%;
+    margin-top: -10%;
+}
+
+.header:hover .arrow-container{animation: arrowAnimation 0.75s infinite alternate;}
+
+.freedom-section .bottom-freedom .arrow{height: 12vw; width: 12vw; filter: drop-shadow(0.5vw 0.5vw 0 blueviolet);}
+ 
+/**************************************************************************** main **************************************************************************/
+
+.main h1{font-size: 5vw; padding-bottom: 0vw;} /* titulos secciones */
+
+
+/* Sección 1: Fighters */
+
+main #fighters{ padding-bottom: 1vw; padding-top: 0.5vw;} /* pa cuadrar la referencia del nav */
+main #fighters .fighters{display: grid; grid-template-columns: repeat(4, 1fr);justify-items: center;margin: 5vw auto;}
+
+main #fighters .fighter { /*cartas fighter*/
+    background-color: black; 
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(1, 3fr);
+    text-align: center;
+    margin: 1vw;
+    width: 90%; /* del tamaño total del container */
+}
+main #fighters a, a:visited{color: white;}
+
+main #fighters .fighter header h1{font-size: 2.25vw; margin: 0; padding: 2vw;} /* letra nombre fighter */
+main #fighters .fighter header h2{font-size: 1.5vw; margin: 0; padding-bottom: 2vw;} /* letra dato fighter */ 
+main #fighters .fighter main{display: grid;grid-template-columns: repeat(1, 2fr);padding: 0 1vw;}
+main #fighters .fighter main .fighter-stats{font-size: 1vw; padding-top: 2vw; display: grid; grid-template-columns: repeat(3, 1fr); justify-items: center;}
+main #fighters .fighter footer{font-size: 1.25vw; padding-bottom: 2vw;} /* letra motto fighter */
+
+
+main #fighters .fighter main .fighter-pic{position: relative;}
+.fighter-pic img{max-width: 100%; height: auto; background-color: white;}
+.fighter-pic img.visible{display: grid;}.fighter-pic img.hidden{display: none;}
+.fighter:hover img.visible{display: none;}.fighter:hover img.hidden{display: grid;}
+.fighter:active img.visible{display: none;} .fighter:active img.hidden{filter: invert();}
+
+main #fighters .fighter:hover{box-shadow: 0px 0px 15px 10px blueviolet;}
+
+main #fighters .mr_element:hover{box-shadow: 0px 0px 15px 10px gray;text-decoration:line-through;}
+main #fighters .fighter .mr_element a{cursor:not-allowed}
+
+/* Sección 2: Game */
+
+main #game{ padding:10vw;}
+main #game .work-in-progress-container{background-color: yellow; padding:2vw;}
+main #game .work-in-progress{
+    background-color: yellow; 
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;     
+    border: dashed black 0.5vw;
+}
+
+main #game .work-in-progress h1{
+    font-size: 7.5vw; margin: 3vw 2vw 0 2vw; padding:0.5vw; background-color: black; color: yellow;text-align: center;
+}
+main #game .work-in-progress h2{
+    background-color: white; 
+    width: fit-content; 
+    margin: 2vw; padding: 1vw; 
+    font-size: 2vw; font-weight:  800;    
+}
+main #game .img-container{align-items: center; justify-content: center; display: flex; height: 25vw; width: 25vw;}
+main #game img{width: 100%; max-width: 100%; height:100%; max-height: 100%;}
+
+/* Sección 3: Who am I? */
+
+main #whoami{display: grid;grid-template-columns: repeat(2,1fr);background-color: black;}
+
+
+
+/**************************************************************************** footer **************************************************************************/
+
+.footer{
+    background-color: yellow;
+    color: black;
+    display: grid;
+    text-align: center;
+}
+.footer p{font-weight: 600;}
+
+/********************************************************************** media queries **************************************************************************/
+
+
+/* Media query para tablets */
+@media screen and (max-width: 768px) {
+    /* header */
+    .navbar .nav-logo img {max-width: 80%;}
+    .navbar .center-nav-container{max-width: 110%; width: 110%; gap: 3vw;}
+    .navbar .center-nav-container .center-nav-item a .text-navbar{display:none;}.icon-navbar{display: grid;}
+    .navbar .center-nav-item a {border: none;text-align: center;}
+    .navbar .center-nav-item a:hover img{filter: drop-shadow(0.5vw 0.5vw 0 blueviolet);}
+    /* main */
+    .main h1{font-size: 10vw; padding: 5vw 3vw 3vw 3vw;}
+
+    main #fighters .fighters {grid-template-columns: repeat(2, 1fr); row-gap: 10vw;}
+    .fighter header {padding: 0.5vw}
+    .fighter header h1{font-size: 3vw; padding: 2.5vw;}
+    .fighter header h2{font-size: 2vw; padding-bottom: 2.5vw;}
+    .fighter main .fighter-stats{font-size: 2vw; padding-top: 2.5vw;}
+    .fighter footer p{font-size: 2.25vw;}
+
+    /* footer */
+
+  }
+  
+  /* Media query para dispositivos móviles */
+  @media screen and (max-width: 480px) {
+    /* header */
+    .header{height: fit-content;}
+    .header .freedom-section{height:130vw;align-content: center;}
+
+    /* main */
+    
+    .main h1{font-size: 12vw; padding: 5vw 6vw 2vw 5.5vw;}
+    main #fighters .fighters {grid-template-columns: repeat(1, 1fr); gap: 20vw; padding:0 1vw;}
+    .fighter header h1{font-size: 7.5vw; padding: 5vw;}
+    .fighter header h2{font-size: 5vw; padding-bottom: 5vw;}
+    .fighter main .fighter-stats{font-size: 4vw; padding-top: 5vw;}
+    .fighter footer p{font-size: 3.5vw; padding: 2vw;}
+
+    /* footer */
+    
+  }
+
+/********************************************************************** animaciones **************************************************************************/
+
+
+  @keyframes arrowAnimation{ 
+    0%{
+        align-items: flex-start;
+    }
+    50%{
+        align-items: center;
+    }
+    100% {
+        align-items: flex-end;
+    }
+}
