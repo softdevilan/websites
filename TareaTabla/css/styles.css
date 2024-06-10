@@ -1,0 +1,46 @@
+body{
+    background-color:#840ef0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:#77efe4;
+}
+
+.tabla-peliculas{
+    height:90vh;
+    width: fit-content;
+    margin: 1vw auto;
+    padding: 0 5vw;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: solid #77efe4 1px;
+}
+
+table{
+    font-size: 13px;
+    display: flex;
+    justify-content: space-around;
+    border-collapse: collapse;
+}
+
+tr, td{
+    border: solid #77efe4 1.5px;
+    padding: 1.5vh 1.5vw;
+    text-align: center;
+    background-color: #840ef0;
+}
+
+.table-header td{
+    color: #840ef0;
+    background-color:#77efe4;
+    border: solid #77efe4 1.5px;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.titulo{
+    background-color:#77efe4;
+    color: #840ef0;
+    font-weight: 500;
+    font-size: 13.5px;
+    border-left: none;
+}
