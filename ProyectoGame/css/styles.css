@@ -1,0 +1,1000 @@
+* {
+    font-family: "Jura", sans-serif;
+    color: #94FF0D;
+}
+
+p {
+    margin: 0;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: black;
+    margin: 0;
+}
+
+hr {
+    border-color: #93ff0f;
+}
+
+
+/********************************************************* HEADER ********************************************************************/
+
+header {
+    /* posicion */
+    position: sticky;
+    top: 0;
+    z-index: 9999999;
+
+    /* display */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    /* dimensiones */
+    height: 20vh;
+    width: 100%;
+    max-width: 100%;
+    min-height: fit-content;
+
+    /* separaciones */
+    margin: 0;
+}
+
+/* ---------logo---------- */
+
+header .logo-container {
+    /* dimensiones */
+    max-height: 75%;
+    width: 15vw;
+    min-width: 15%;
+
+    /* display */
+    display: flex;
+    justify-content: center;
+}
+
+.logo-container img {
+    /* dimensiones */
+    max-height: 100%;
+    max-width: 100%;
+
+    /* fit */
+    object-fit: scale-down;
+
+    /* transiciones de animación */
+    transition: all 200ms ease-out;
+}
+
+/* ---------navbar---------- */
+
+header .mobile { display: none; }
+
+header .menu {
+    /* dimensiones */
+    height: 6.5vh;
+    max-width: fit-content;
+
+    /* display */
+    display: inline-flex;
+    justify-content: right;
+
+    /* texto */
+    font-size: 1.5vw;
+    text-wrap: nowrap;
+
+    /* background */
+    background-color: rgb(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+
+    /* borde */
+    border: solid 2px #93ff0f;
+}
+
+
+
+.navbar .item-navbar .store-section,
+.menu .item-navbar .desplegable a {
+    /* display */
+    display: flex;
+    justify-items: center;
+    align-items: center;
+
+    /* separaciones */
+    padding: 1.5vh 2.5vw;
+}
+
+/* navbar menu: store-section */
+.menu .item-navbar .store-section {
+    height: 3.5vh;
+    text-transform: uppercase;
+}
+
+.menu .item-navbar .store-section i {
+    /* separación con texto */
+    padding-right: 1vw;
+}
+
+/* navbar menu: desplegable */
+.menu .item-navbar .desplegable {
+    position: absolute;
+    list-style: none;
+
+    /* display oculto */
+    display: none;
+
+    /* separaciones */
+    padding: 0;
+    margin: 0;
+
+    /* background */
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+
+    /* bordes */
+    border: solid 2px #93ff0f;
+    border-top-width: 10px;
+}
+
+.navbar .item-navbar .desplegable li a {
+    /* tamaño */
+    min-width: 10vw;
+
+    /* texto */
+    color: #93ff0f;
+    font-weight: 500;
+
+    /* separaciones */
+    padding: 2vh 3vw;
+}
+
+.navbar .item-navbar .desplegable li a i { padding-right: 0.5vw; }
+
+/* navbar: user y cart */
+
+.navbar .user a,
+.navbar .cart a {
+    max-width: fit-content;
+    /* display */
+    display: flex;
+
+    /* background */
+    background-color: #93ff0f;
+}
+
+.navbar .user a i,
+.navbar .cart a i 
+{
+    padding: 0;
+    color: black;
+}
+
+/* ---------hovers---------- */
+.logo-container:hover .glitch-img {
+    animation: glitch-img 500ms;
+    filter: brightness(100);
+    transform: scale(1.05);
+}
+
+.item-navbar:hover .store-section,
+.navbar .item-navbar .desplegable li:hover a 
+{
+    background-color: #93ff0f;
+}
+
+.item-navbar:hover .store-section p,
+.item-navbar:hover .store-section i,
+.item-navbar .desplegable li:hover a,
+.item-navbar .desplegable li:hover i 
+{
+    color: black;
+}
+
+.item-navbar:hover .store-section .glitch { animation: glitch 500ms 50ms; }
+
+.desplegable .glitch:hover { animation: glitch 500ms 50ms; }
+
+.item-navbar:hover .desplegable { display: block; }
+
+.navbar .user a:hover i,
+.navbar .cart a:hover i 
+{
+    animation: glitch 500ms 50ms;
+
+    text-shadow: 
+    -0.025em 0 0 rgba(255, 0, 0, 0.75),
+    -0.025em -0.025em 0 rgba(149, 0, 255, 0.75),
+    -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+}
+
+
+/********************************************************* MAIN ********************************************************************/
+
+/* ---------home---------- */
+
+main { min-height: 70vh; }
+
+#home p { margin: 0 0 4vh 1vw; }
+
+#home h1 { margin-left: 0.9vw; }
+
+.home-container {
+    /* dimensiones */
+    height: fit-content;
+    max-width: 100%;
+
+    /* display */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+
+    /* separaciones */
+    margin: 5vh 2vw;
+    padding: 1vh 1vw;
+    gap: 1vw;
+}
+
+/* home: game-container */
+
+.game-container {
+    /* posición en el grid */
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+    /* dimensiones */
+    width: 100%;
+    height: 100%;
+
+    /* display */
+    display: flex;
+    flex-direction: column;
+}
+
+.game-container .img-container {
+    /* dimensiones */
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+
+    /* display */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container .img-container img {
+    /* dimensiones */
+    width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+
+    /* fit */
+    object-fit: scale-down;
+    object-fit: cover;
+
+    /* transiciones */
+    transition: 200ms ease-out;
+}
+
+/* home: other-games */
+
+.other-games-container {
+    /* posición en el grid */
+    grid-column-start: 4;
+    grid-column-end: 6;
+
+    /* dimensiones */
+    height: 100%;
+    width: 100%;
+
+    /* display */
+    display: flex;
+    flex-direction: column;
+}
+
+.other-games-grid {
+    /* display */
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+
+    /* separaciones */
+    gap: 1.5vw;
+}
+
+.other-games-grid .game-img-container {
+    /* dimensiones */
+    height: 100%;
+    width: 100%;
+
+    /* display */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.other-games-grid .game-img-container img {
+    /* dimensiones */
+    width: 90%;
+    height: 90%;
+
+    /* fit */
+    object-fit: scale-down;
+    object-fit: cover;
+
+    /* separaciones */
+    border: solid transparent 15px;
+    border-radius: 2vw;
+
+    /* transiciones */
+    transition: all 200ms ease-out;
+}
+
+/* consolas */
+
+#consolas {
+    display: flex;
+    flex-direction: column;
+
+    margin: 5vh 5vw;
+}
+
+#consolas h1 {
+    font-size: 2vw;
+}
+
+.consolas-container {
+    width: fit-content;
+    max-width: 100%;
+    height: fit-content;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+
+    margin: 5vh auto;
+    column-gap: 5vw;
+}
+
+.consola a,
+.modelo a {
+    height: 25vh;
+    width: 20vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.consola img,
+.modelo img {
+    /* dimensiones */
+    width: 100%;
+    min-width: 100%;
+    height: 25vh;
+
+    /* fit */
+    object-fit: scale-down;
+    object-fit: cover;
+
+    /* transiciones */
+    transition: 200ms ease-out;
+
+    border-radius: 25px;
+
+    filter: grayscale(60%);
+}
+
+/* various products */
+
+.various-products {
+    margin-bottom: 5vh;
+}
+
+.various-products h2 {
+    font-size: 3.5vh;
+    margin: 7.5vh 5vw 1vh 5vw;
+}
+
+.various-products .products-grid {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    margin: 0 5vw;
+    column-gap: 2vw;
+}
+
+.various-products .products-grid .product {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.various-products .products-grid .product .product-img-container {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.various-products .products-grid .product .product-img-container img {
+    height: 25vh;
+    width: 20vw;
+    object-fit: scale-down;
+    object-fit: cover;
+    transition: ease-in-out 300ms;
+    border: solid 0.75vh #93ff0f;
+}
+
+.product-img-container .hidden {
+    position: absolute;
+    height: 25vh;
+    width: 20vw;
+    filter: opacity(0%);
+}
+
+.product-img-container .hidden:hover {
+    filter: opacity(100%);
+    transform: scale(1.05);
+}
+
+
+/* cyberpunk */
+
+.product-page {
+    margin: 10vh 5vw;
+}
+
+.product-page h2,
+.product-page h3 {
+    text-transform: uppercase;
+}
+
+.product-page h2 {
+    font-size: 1.75vw;
+    animation: glitch 500ms 50ms;
+}
+
+.product-page h3 {
+    font-size: 1vw;
+}
+
+.product-page h4{
+    font-size: 1vw;
+}
+
+.product-page p {
+    text-align: justify;
+}
+
+.product-page button {
+    font-size: 1.25vw;
+    text-transform: uppercase;
+    padding: 1vh 1vw;
+    border: solid 0.5vh #93ff0f;
+    background-color: transparent;
+    transition: ease-in-out 0.2s;
+}
+
+.cyberpunk-container,
+.consola-producto-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    margin: 5vh 5vw;
+    column-gap: 2vh;
+}
+
+.game-video-container,
+.consola-foto-container {
+
+    /* posición en el grid */
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    /* separaciones */
+    padding: 2vw;
+
+
+    /* background */
+    background-color: rgba(20, 25, 13, 0.75);
+}
+
+.game-video-container video,
+.consola-foto-container img {
+    height: 100%;
+    width: 100%;
+
+    object-fit: cover;
+
+    border: solid 0.25vw #94FF0D;
+    transition: ease-in-out 300ms;
+}
+
+.consola-foto-container {
+    padding: 5vh 5vw;
+}
+
+.game-info {
+    /* dimensiones */
+    max-width: 100%;
+
+    /* display */
+    display: flex;
+    flex-direction: column;
+
+    /* separaciones */
+    padding: 2vw;
+    row-gap: 5vh;
+
+    /* background */
+    background-color: rgba(20, 25, 13, 0.75);
+}
+
+.game-info .platforms {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    font-size: 2.5vw;
+}
+
+.game-info .platforms i p {
+    font-size: 0.8vw;
+    font-style: normal;
+    text-align: center;
+    padding-top: 0.5vh;
+
+}
+
+
+/* hovers */
+
+.game-container .img-container:hover img {
+    filter: drop-shadow(0.5vw 0.5vw 0 #26ff00);
+    transform: scale(1.01);
+}
+
+.other-games-grid .game-img-container img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0.5vw 0.5vw 0 yellow);
+}
+
+.consola:hover img,
+.modelo:hover img {
+    filter: none;
+}
+
+.xbox:hover img,
+#xbox .modelo:hover img {
+    filter: drop-shadow(0px 0px 20px #26ff00);
+}
+
+.playstation:hover img,
+#playstation .modelo:hover img {
+    filter: drop-shadow(0px 0px 20px #006eff);
+}
+
+.nintendo:hover img,
+#nintendo .modelo:hover {
+    filter: drop-shadow(0px 0px 20px #ff0000);
+}
+
+.product-page button:hover {
+    background-color: #93ff0f;
+    color: black;
+    animation: glitch 500ms 5ms;
+}
+
+.consola-foto-container img:hover {
+    transform: scale(1.05);
+    border: white;
+}
+
+/********************************************************* FOOTER ********************************************************************/
+
+footer {
+    /* dimensiones */
+    height: fit-content;
+    max-width: 100%;
+
+    /* display */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    /* separaciones */
+    padding: 1vh 3vw 3vh 3vw;
+
+    /* texto */
+    font-size: 1vw;
+
+    /* background */
+    background-color: rgba(20, 25, 13, 0.75);
+}
+
+.footer-top {
+    width: fit-content;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto 2.5vh auto;
+    padding: 2vh 1vw;
+}
+
+.footer-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-bottom .findme {
+    display: flex;
+    align-items: center;
+    justify-self: end;
+}
+
+.footer-bottom section p {
+    padding: 1vh 1vw;
+}
+
+.footer-bottom .footer-links section a:first-child {
+    padding-left: 1vw;
+}
+
+.footer-bottom .footer-links i {
+    font-size: 1.75vw;
+    padding-left: 0.5vw;
+}
+
+.footer-bottom .footer-links i:hover {
+    color: white;
+    animation: glitch 500ms;
+}
+
+.glitch:hover {
+    animation: glitch 500ms;
+}
+
+/********************************************************* MEDIA QUERY ********************************************************************/
+
+/* Tablet */
+@media only screen and (max-width: 1023px) {
+
+    /* header */
+    header {
+        /* dimensiones */
+        height: 8.5vh;
+        min-height: fit-content;
+
+        /* background */
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(5px);
+
+        padding-top: 1.5vh;
+        /* borde inferior */
+        border-bottom: solid 1px;
+    }
+
+    header .logo-container { display: none; }
+
+    header .navbar {
+        /* posición: quitamos las separaciones */
+        top: 10vh;
+
+        /* dimensiones: ocupa la pantalla entera */
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    header .mobile {
+        /* posicion */
+        top: 0 !important;
+
+        /* dimensiones */
+        height: 100%;
+
+        /* display */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        /* quita el borde verde */
+        border: none;
+
+        /* background */
+        background-color: transparent;
+    }
+
+    /* header: mobile nav */
+    .mobile .left-navbar,
+    .mobile .right-navbar {
+        height: 100%;
+        width: 100%;
+        display: inline-flex;
+    }
+
+    .mobile .left-navbar { justify-content: flex-start; }
+
+    .mobile .right-navbar {
+        justify-content: flex-end;
+        max-width: 95%;
+    }
+
+    .mobile .item-navbar {
+        /* dimensiones */
+        height: 100%;
+        max-height: 100%;
+        max-width: 100%;
+
+        /* display */
+        display: flex;
+        align-items: center;
+
+        /* separaciones */
+        padding: 0 0.5vw;
+    }
+
+    .mobile .item-navbar a { background-color: transparent; }
+
+    .mobile .item-navbar a i {
+        color: #93ff0f;
+        padding: 0 !important;
+        font-size: 4vh !important;
+    }
+
+    .mobile .cart a i, .mobile .user a i { font-size: 3.5vh !important; }
+
+    .mobile .item-navbar .store-section {
+        min-height: 100%;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .mobile .logo img { height: 7vh; }
+
+    /* header: menu */
+    header .menu {
+        /* posicion */
+        position: fixed;
+        top: 10vh !important;
+
+        /* dimensiones */
+        height: fit-content;
+        max-width: 100% !important; min-width: 95%;
+
+        /* separaciones */
+        padding: 5vh 2vw; 
+
+        /* display: alineación */
+        display: none;
+
+        font-size: 2vw;
+
+        background-color: rgba(0, 0, 0);
+    }
+
+    .menu .user, .menu .cart { display: none; }
+
+    .menu .item-navbar { width: 100%; }
+
+    .menu .item-navbar .desplegable li a {
+        height: 3vh;
+        padding: 0.1vh 3vw;
+        font-size: 2vh;
+    }
+
+    /* main */
+    .home-container, .cyberpunk-container, .consola-producto-container 
+    {
+        grid-template-columns: repeat(1, 2fr);
+        row-gap: 3vh;
+    }
+
+    .cyberpunk-container h2 { font-size: 2.5vh; }
+
+    .game-container,
+    .game-video-container,
+    .consola-foto-container,
+    .other-games-container 
+    {
+        /* posición en el grid */
+        grid-column-start: 1;
+        grid-column-end: 1;
+    }
+
+    .cyberpunk-container .game-info,
+    .consola-producto-container .game-info {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 1vh;
+        column-gap: 1vw;
+        align-items: center;
+    }
+
+    .consolas-container { margin: 0 auto; }
+
+    #consolas h1, #xbox h1, #nintendo h1, #playstation h1 {
+        font-size: 3vh;
+        margin-top: 5vh;
+        margin-bottom: 0.5vh;
+    }
+
+    #consolas h2 { margin: 2vh auto 0 auto; }
+
+    .consola a, .modelo a { height: 20vh; }
+
+    .consola img, .modelo img 
+    {
+        /* dimensiones */
+        min-width: 22.5vw !important;
+        height: 15vh !important;
+
+        /* fit */
+        object-fit: scale-down;
+        object-fit: cover;
+
+        /* transiciones */
+        transition: 200ms ease-out;
+
+        border-radius: 10px;
+
+        filter: none;
+    }
+
+    .consola-producto-container .game-info .platforms { padding: 1vw; }
+
+    .consola-producto-container .game-info .platforms i p { font-size: 1.5vw;}
+
+    .cyberpunk-container .game-info .precio,
+    .consola-producto-container .game-info .precio 
+    {
+        justify-self: end;
+    }
+
+    .cyberpunk-container .game-info .buy-button-container,
+    .consola-producto-container .game-info .buy-button-container {
+        align-self: end;
+        justify-self: center;
+        width: 90%;
+    }
+
+    .cyberpunk-container .game-info .buy-button-container button,
+    .consola-producto-container .game-info .buy-button-container button 
+    {
+        width: 100%;
+        font-size: 2vh;
+    }
+
+    .various-products .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0 5vw;
+        column-gap: 2vw;
+    }
+
+    .various-products .products-grid .product .product-img-container img {
+        height: 25vh;
+        width: 30vw;
+        object-fit: scale-down;
+        object-fit: cover;
+        transition: ease-in-out 300ms;
+    }
+
+    /* hover */
+
+    .item-navbar:hover .desplegable { display: none; }
+
+    header:hover .menu { display: grid; grid-template-columns: repeat(1, 1fr); row-gap: 5vh; }
+
+    header .mobile .logo .store-section:hover { background-color: transparent; }
+
+    header .mobile .logo .store-section:active { filter: brightness(100); }
+
+    /* footer */
+
+    footer{ font-size: 2.5vw; }
+}
+
+/* Móvil */
+@media only screen and (max-width: 767px) {
+
+    /* main */
+
+    .various-products .products-grid { margin: 0 1vw; }
+
+    .various-products .products-grid, 
+    .cyberpunk-container .game-info,
+    .consola-producto-container .game-info,
+    #xbox, #playstation, #nintendo 
+    {
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+    }
+
+
+    #xbox .modelo a, #playstation .modelo a, #nintendo .modelo a{ width: 60vw; justify-content: center; }
+
+    .various-products .products-grid .product .product-img-container { justify-content: center; }
+
+    .various-products .products-grid .product .product-img-container img { width: 80vw;}
+
+    /* footer */
+
+    .footer-bottom {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-bottom section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+/********************************************************* ANIMACIONES ********************************************************************/
+
+/* glitch para el texto */
+@keyframes glitch {
+    0% {
+        text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+            -0.05em -0.025em 0 rgba(149, 0, 255, 0.75),
+            -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+
+    15% {
+        text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+            0.025em 0.025em 0 rgba(149, 0, 255, 0.75),
+            -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+
+    50% {
+        text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+            0.05em 0 0 rgba(149, 0, 255, 0.75),
+            0 -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+
+    100% {
+        text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75),
+            -0.025em -0.025em 0 rgba(149, 0, 255, 0.75),
+            -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+}
+
+/* glitch para las imágenes con forma */
+@keyframes glitch-img {
+    0% {
+        filter: drop-shadow(0.5em 0 0 rgba(255, 0, 0, 0.75)) drop-shadow(-0.5em -0.25em 0 rgba(149, 0, 255, 0.75)) drop-shadow(-0.25em 0.5em 0 rgba(0, 0, 255, 0.75));
+    }
+
+    15% {
+        filter: drop-shadow(-0.5em -0.25em 0 rgba(255, 217, 0, 0.75)) drop-shadow(0.25em 0.25em 0 rgba(149, 0, 255, 0.75)) drop-shadow(-0.5em -0.5em 0 rgba(0, 0, 255, 0.75));
+    }
+
+    50% {
+        filter: drop-shadow(0.25em 0.5em 0 rgba(255, 0, 0, 0.75)) drop-shadow(0.5em 0 0 rgba(149, 0, 255, 0.75)) drop-shadow(0 -0.5em 0 rgba(0, 0, 255, 0.75));
+    }
+
+    65% {
+        filter: drop-shadow(-0.25em 0 0 rgba(255, 0, 0, 0.75)) drop-shadow(-0.25em -0.25em 0 rgba(149, 0, 255, 0.75)) drop-shadow(-0.25em -0.5em 0 rgba(0, 0, 255, 0.75));
+    }
+
+    100% {
+        filter: drop-shadow(-0.025em 0 0 rgba(255, 0, 0, 0.75)) drop-shadow(-0.025em -0.025em 0 rgba(149, 0, 255, 0.75)) drop-shadow(-0.025em -0.05em 0 rgba(0, 0, 255, 0.75));
+    }
+}

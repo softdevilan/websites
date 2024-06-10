@@ -1,0 +1,106 @@
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+header {
+    font-size: 1.25vw;
+    text-transform: uppercase;
+    border-bottom: solid 1px rgb(29, 29, 29);
+}
+
+header .navbar * {
+    font-weight: 500;
+}
+
+header .navbar i {
+    font-size: 1.25vw;
+}
+
+.dropdown-item {
+    padding: 1vh 1vw !important;
+}
+
+.dropdown-submenu {
+    position: absolute;
+    left: 100%;
+    top: 0%;
+    display: none;
+    padding: 0;
+}
+
+.dropdown-sub:hover .dropdown-submenu {
+    display: block;
+}
+
+main .img-container {
+    max-width: 100%;
+}
+
+main .img-container img {
+    max-width: 100%;
+}
+
+/* Estilos para las tarjetas */
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+}
+
+.btn-dark {
+    background-color: #343a40;
+    border-color: #343a40;
+}
+
+.btn-dark:hover {
+    background-color: #23272b;
+    border-color: #23272b;
+}
+
+.img-taller {
+    height: 300px; 
+    object-fit: cover;
+}
+
+.img-full {
+    height: 100%; 
+    object-fit: cover;
+}
+
+.blockquote-footer {
+    margin-top: 1rem !important; 
+}
+
+/* Estilos de disposición para diferentes tamaños de pantalla */
+@media (min-width: 768px) {
+    .card-columns {
+        column-count: 3;
+    }
+}
+
+@media (min-width: 992px) {
+    .card-columns {
+        column-count: 4;
+    }
+}
