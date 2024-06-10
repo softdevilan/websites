@@ -1,0 +1,8 @@
+.navbar{ font-size: 1.25em; }
+.navbar i{ font-size: 1.5em; }
+
+main .img-container{ max-width: 100%; }
+main .img-container img{ max-width: 100%; }
+
+main .cards-container{ display: flex; justify-content: space-evenly; max-width: 100%;}
+main .cards-container .card { margin: 5vh 0;}
